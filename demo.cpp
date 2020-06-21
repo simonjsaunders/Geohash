@@ -28,7 +28,7 @@ void encode(double latitude, double longitude, unsigned int precision) {
     std::cout << "Encode latitude " << latitude << ", longitude "
         << longitude << ", precision " << precision
         << "\ngeohash = " << geohash::encode(latitude, longitude, precision)
-    << '\n';
+        << '\n';
 }
 
 void decode(const std::string& geohash) {
