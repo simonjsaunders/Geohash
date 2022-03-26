@@ -8,8 +8,8 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -39,13 +39,13 @@ constexpr int bits[] = {16, 8, 4, 2, 1};
 void refine_interval(std::pair<double, double>& interval, unsigned int index,
                      unsigned int mask) {
     if (index & mask)
-        interval.first = (interval.first + interval.second)/2;
+        interval.first = (interval.first + interval.second) / 2;
     else
-        interval.second = (interval.first + interval.second)/2;
+        interval.second = (interval.first + interval.second) / 2;
 }
 
 bool bisect(double coord, std::pair<double, double>& range) {
-    double mid = (range.first + range.second)/2.0;
+    double mid = (range.first + range.second) / 2.0;
     if (coord > mid) {
         range.first = mid;
         return true;
@@ -54,7 +54,7 @@ bool bisect(double coord, std::pair<double, double>& range) {
     return false;
 }
 
-}
+} // namespace
 
 std::string encode(double latitude, double longitude, unsigned int precision) {
     bool is_even = true;
